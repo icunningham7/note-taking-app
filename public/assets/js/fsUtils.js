@@ -45,6 +45,10 @@ const readAndRemove = (content, file) => {
     } else {
       const parsedData = JSON.parse(data);
       const noteIndex = parsedData.findIndex((element) => element.id === content);
+      // If there is no matching content, don't do anything
+      if (noteIndex === -1) {
+        return
+      }
       parsedData.splice(noteIndex, 1);
       writeToFile(file, parsedData);
     }

@@ -24,6 +24,7 @@ notes.route('/')
 notes.route('/:id')
     .delete((req, res) => {
         readAndRemove(req.params.id, noteFile);
+        res.json('deleted');
     })
 
 module.exports = notes;

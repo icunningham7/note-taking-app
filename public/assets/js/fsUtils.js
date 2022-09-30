@@ -1,5 +1,6 @@
 const fs = require('fs');
 const util = require('util');
+const uuid = require('./uuid');
 
 // Promise version of fs.readFile
 const readFromFile = util.promisify(fs.readFile);
@@ -37,20 +38,36 @@ const readAndAppend = (content, file) => {
  *  @param {string} file The path to the file you want to save to.
  *  @returns {void} Nothing
  */
- const readAndRemove = (content, file) => {
+const readAndRemove = (content, file) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
     } else {
       const parsedData = JSON.parse(data);
-      console.log(parsedData);
-      console.log(content);
       const noteIndex = parsedData.findIndex((element) => element.id === content);
-      console.log(noteIndex);
       parsedData.splice(noteIndex, 1);
       writeToFile(file, parsedData);
     }
   });
 };
 
-module.exports = { readFromFile, writeToFile, readAndAppend, readAndRemove };
+/**
+ *  Function to generate a unique id that isn't being used in the database 
+ *  @param {string} file The path to the file you want to save to.
+ *  @returns {id} A unique id
+ */
+const getUniqueUuid = (file) => {
+  let newId;
+  const data = fs.readFileSync(file, 'utf8');
+  const parsedData = JSON.parse(data);
+  let idExists = true;
+
+  while (idExists) {
+    newId = uuid();
+    idExists = parsedData.findIndex((element) => element.id === newId) !== -1;
+  }
+
+  return newId;
+};
+
+module.exports = { readFromFile, writeToFile, readAndAppend, readAndRemove, getUniqueUuid };

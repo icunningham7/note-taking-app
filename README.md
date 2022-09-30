@@ -1,13 +1,27 @@
-# 11 Express.js: Note Taker
+# Noted
+UofU-VIRT-FSF-PT-07-2022-U-LOLC-MWTH Module 11 Challenge Note Taker:
 
-## Your Task
+## Desctiption
 
-Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+Noted is a lightweight note taking app for busy people. Noted lets users add and delete items from a list of notes. [Noted is hosted by Heroku](https://frozen-wildwood-46744.herokuapp.com/).
 
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
+Repository: https://github.com/icunningham7/note-taking-app
+Live Demo: https://frozen-wildwood-46744.herokuapp.com/
+
+## Mock-Up
+
+View Noted in action!
+
+![View existing notes. Noted title "Contact Payroll" reads, "process checks".](./assets/noted-view-note.png)
+
+![Add new notes. Note titled “Use Noted” reads, “Stop using post-it notes and start getting orgnized!” with other notes listed on the left.](./assets/noted-add-note.png)
 
 
-## User Story
+
+
+## Project Requirements
+
+### User Story
 
 ```
 AS A small business owner
@@ -16,7 +30,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
 
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 ```
 GIVEN a note-taking application
@@ -33,14 +47,3 @@ THEN that note appears in the right-hand column
 WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
-
-
-## Mock-Up
-
-The following images show the web application's appearance and functionality:
-
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo-01.png)
-
-![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](./Assets/11-express-homework-demo-02.png)
-
-
